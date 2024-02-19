@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { QuestionComponent } from '../../icons/question/question.component';
 import { CuriosityComponent } from '../../icons/curiosity/curiosity.component';
 import { HistoryComponent } from '../../icons/history/history.component';
@@ -17,6 +17,8 @@ import { HistoryComponent } from '../../icons/history/history.component';
   styleUrl: './chat-suggestions.component.scss'
 })
 export class ChatSuggestionsComponent {
+  @Output() questionSelected =  new EventEmitter<string>();
+
   suggestionTopics = [
     {
       title: "Dúvidas",
@@ -45,4 +47,8 @@ export class ChatSuggestionsComponent {
       ]
     },
   ]
+
+  selectQuestion(value: string){
+    this.questionSelected.emit(value)
+  }
 }

@@ -1,4 +1,6 @@
 .chat-wrapper {
+    height: 90%;
+
     header {
         display: flex;
         align-items: center;
@@ -30,5 +32,9 @@
                 color: var(--online-color);
             }
         }
+    }
+
+    .chat-content {
+        height: 100%;
     }
 }
