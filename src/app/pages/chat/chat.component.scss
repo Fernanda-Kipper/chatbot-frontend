@@ -1,5 +1,11 @@
 .chat-wrapper {
-    height: 90%;
+    height: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 0 18px 36px 18px;
+    gap: 18px;
 
     header {
         display: flex;
@@ -36,5 +42,27 @@
 
     .chat-content {
         height: 100%;
+    }
+
+    form {
+        border-radius: 30px;
+        box-shadow: 5px 4px 20px rgba(0, 0, 0, 0.2);
+        color: var(--text-secondary);
+        display: flex;
+        align-items: center;
+        padding: 18px 22px;
+
+        input {
+            width: 90%;
+        }
+
+        button {
+            height: 24px;
+        }
+
+        input, button {
+            border: none;
+            background-color: transparent;
+        }
     }
 }

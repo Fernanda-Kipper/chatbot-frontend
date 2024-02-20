@@ -11,10 +11,16 @@
     </header>
     <section class="chat-content">
         <chat-suggestions 
-            (questionSelected)="sendSuggestedQuestion($event)"
+            (questionSelected)="sendNewMessage($event)"
             *ngIf="messages.length < 1"
         >
         </chat-suggestions>
         <chat-dialog [messages]="messages"></chat-dialog>
     </section>
+    <form [formGroup]="chatForm">
+        <input placeholder="Escreva sua mensagem aqui" type="text" id="name" formControlName="message"/>
+        <button (click)="submit()">
+            <icon-send></icon-send>
+        </button>
+    </form>
 </main>
